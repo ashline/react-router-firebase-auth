@@ -11,7 +11,7 @@ This is an example repo for authenticating with Firebase and React Router.
 * Simple Boostrap UI
 
 #### Instructions:
-* Swap out the firebase config in ```config/constants``` with your own
+* Swap out the firebase config in ```config/firebaseConfig``` with your own
 * ```npm install```
 * ```npm start```
 * Visit ```localhost:3000```

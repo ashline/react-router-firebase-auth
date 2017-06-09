@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { auth } from '../helpers/auth'
+import { auth } from 'modules/auth/firebaseAuth'
 
 function setErrorMsg(error) {
   return {

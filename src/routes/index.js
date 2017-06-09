@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import { Route, BrowserRouter, Link, Redirect, Switch } from 'react-router-dom'
-import Login from './Login'
-import Register from './Register'
-import Home from './Home'
-import Dashboard from './protected/Dashboard'
-import { logout } from '../helpers/auth'
-import { firebaseAuth } from '../config/constants'
+import { Login } from 'routes/login'
+import { Register } from 'routes/register'
+import { Home } from 'routes/home'
+import { Dashboard } from 'routes/protected/dashboard'
+import { logout } from 'modules/auth/firebaseAuth'
+import { firebaseAuth } from 'config/firebaseConfig'
 
 function PrivateRoute ({component: Component, authed, ...rest}) {
   return (
