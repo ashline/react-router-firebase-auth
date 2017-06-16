@@ -6,6 +6,7 @@ import { Login } from 'routes/login'
 import { Register } from 'routes/register'
 import { Home } from 'routes/home'
 import { Dashboard } from 'routes/protected/dashboard'
+import { Secret } from 'routes/protected/secret'
 
 import PrivateRoute from 'components/PrivateRoute'
 import PublicRoute from 'components/PublicRoute'
@@ -33,6 +34,11 @@ export default class App extends Component {
       }
     })
   }
+  componentDidUpdate(prevProps, prevState) {
+    console.log('====================================');
+    console.log('update index');
+    console.log('====================================');
+  }
 
   componentWillUnmount () {
     this.removeListener()
@@ -53,6 +59,9 @@ export default class App extends Component {
                 </li>
                 <li>
                   <Link to="/dashboard" className="navbar-brand">Dashboard</Link>
+                </li>
+                <li>
+                  <Link to="/secret" className="navbar-brand">Secret</Link>
                 </li>
                 <li>
                   {this.state.authed
@@ -77,6 +86,7 @@ export default class App extends Component {
                 <PublicRoute authed={this.state.authed} path='/login' component={Login} />
                 <PublicRoute authed={this.state.authed} path='/register' component={Register} />
                 <PrivateRoute authed={this.state.authed} path='/dashboard' component={Dashboard} />
+                <PrivateRoute authed={this.state.authed} path='/secret' component={Secret} />
                 <Route render={() => <h3>No Match</h3>} />
               </Switch>
             </div>
